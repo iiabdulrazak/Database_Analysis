@@ -1,6 +1,5 @@
 from os import read
 
-
 try:
   import os
   import numpy
