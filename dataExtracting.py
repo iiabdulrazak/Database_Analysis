@@ -14,4 +14,8 @@ dbUser = os.getenv('testUserDB')
 password = os.environ.get('testPassDB')
 
 #creating connection
-dbConnection = conn.connect(host='sql6.freesqldatabase.com', user=dbUser, passwd=password, db='sql6410935', port=3306)
+dbConnection = conn.connect(host='sql6.freesqldatabase.com',
+                            user='sql6410935', passwd='GHh4XfMTfT',
+                            db='sql6410935', port=3306)
+
+print(f'Connection ... \n{dbConnection}')
