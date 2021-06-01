@@ -1,3 +1,6 @@
+from os import read
+
+
 try:
   import os
   import numpy
@@ -8,7 +11,7 @@ try:
   import matplotlib_inline
 except Exception as e:
   print(f'Error while implementing!\n {e}')
-  
+
 #creating connection
 dbConnection = conn.connect(host='sql6.freesqldatabase.com',
                             user='sql6410935', passwd='GHh4XfMTfT',
@@ -16,3 +19,6 @@ dbConnection = conn.connect(host='sql6.freesqldatabase.com',
 #check if connection established!
 print(f'Connection ... \n{dbConnection}')
 
+#lets get some data from the database
+corona_tables = pd.read_sql_query('SELECT * FROM corona', dbConnection)
+print(corona_tables)
