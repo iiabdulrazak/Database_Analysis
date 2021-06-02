@@ -2,10 +2,7 @@ try:
   import os
   import numpy
   import pandas as pd
-  import seaborn as sns
-  import matplotlib.pyplot as plt
   import mysql.connector as conn
-  import matplotlib_inline
 except Exception as e:
   print(f'Error while implementing!\n {e}')
 
