@@ -1,7 +1,5 @@
 import MySQLdb
 import csv
-import sys
-import config as cf
 from sqlalchemy import create_engine
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Date
 
