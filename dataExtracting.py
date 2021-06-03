@@ -14,8 +14,5 @@ dbConnection = conn.connect(host='sql6.freesqldatabase.com',
 print(f'Connection ... \n{dbConnection}')
 
 #lets get some data from the database
-corona_show = pd.read_sql_query('SHOW TABLES FROM sql6410935', dbConnection)
-corona_describe = pd.read_sql_query('DESCRIBE corona', dbConnection)
-corona_select = pd.read_sql_query('SELECT * FROM corona', dbConnection)
-
-print(f'Show all Tables:\n{corona_show} \n\n Describe Table:\n{corona_describe} \n\n Select all Data:\n{corona_select}')
+data = pd.read_sql_query('SELECT * FROM corona', dbConnection)
+print(f'Extracting all Data...\n{data}')
