@@ -11,7 +11,7 @@ dbConnection = conn.connect(host='sql6.freesqldatabase.com',
                             user='sql6410935', passwd='GHh4XfMTfT',
                             db='sql6410935', port=3306)
 #check if connection established!
-print(f'Connection ... \n{dbConnection}')
+print(f'Connection ... \n{dbConnection}\n')
 
 #lets get some data from the database
 data = pd.read_sql_query('SELECT * FROM corona', dbConnection)
