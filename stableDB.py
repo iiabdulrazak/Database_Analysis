@@ -17,11 +17,9 @@ createQuery = '''
                 CREATE TABLE IF NOT EXISTS corona(date DATE, country VARCHAR(255),
                 confirmed INT(50), recovered INT(50), deaths INT(50))
               '''
-
 checkQuery = '''
-                SELECT * FROM coron
+                SELECT * FROM corona
              '''
-             
 insertQuery = '''
                 INSERT INTO corona(id,dates,country,confirmed,recovered,deaths) VALUES(%s,%s,%s,%s,%s,%s)
              '''
