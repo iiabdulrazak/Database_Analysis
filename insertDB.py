@@ -1,13 +1,14 @@
 import MySQLdb
 import csv
+import conf2 as cf
 from sqlalchemy import create_engine
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Date
 
 #needed configuration and connection
 meta = MetaData()
-conn = MySQLdb.connect(host='sql6.freesqldatabase.com', user='sql6410935', password='GHh4XfMTfT', database='sql6410935')
+conn = MySQLdb.connect(host='34.87.39.39', user='root', password='Dz(_11@HeR#VL', database='corona')
 cursor = conn.cursor()
-engine = create_engine('mysql://sql6410935:GHh4XfMTfT@sql6.freesqldatabase.com:3306/sql6410935')
+engine = create_engine('mysql://cf.user:cf.password@34.87.39.39:3306/cf.db')
 
 #creating table
 corona = Table(
@@ -23,7 +24,7 @@ meta.create_all(engine)
 print("Table Created! %s" %(corona.columns.keys()))
 
 #inserting to the table
-csv_data = csv.reader(open('../data/covidCases.csv'))
+csv_data = csv.reader(open('../data/data.csv'))
 header = next(csv_data)
 print('Inserting in Process ...!')
 for row in csv_data:
