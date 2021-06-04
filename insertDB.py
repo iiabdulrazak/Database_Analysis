@@ -15,9 +15,9 @@ corona = Table(
    'corona', meta, 
    Column('date', Date,), 
    Column('country', String(255)), 
-   Column('confirmed', Integer()),
-   Column('recovered', Integer()),
-   Column('deaths', Integer()),
+   Column('confirmed', Integer(11)),
+   Column('recovered', Integer(11)),
+   Column('deaths', Integer(11)),
 )
 
 meta.create_all(engine)
