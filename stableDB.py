@@ -1,5 +1,4 @@
 try:
-    import re
     import pandas as pd
     import mysql.connector as conn
 except Exception as e:
@@ -24,19 +23,19 @@ checkQuery = '''
              '''
              
 insertQuery = '''
-                INSERT INTO corona(id,date,country,confirmed,recovered,deaths) VALUES(%s,%s,%s,%s,%s,%s)
+                INSERT INTO corona(id,dates,country,confirmed,recovered,deaths) VALUES(%s,%s,%s,%s,%s,%s)
              '''
              
 #creating variable out of csv file
-data = pd.read_csv('data/data.csv')
+data = pd.read_csv('data/data2.csv', header=None)
 ids = data.index
-date = data['date']
+dates = data['date']
 country = data['country']
 confirmed = data['confirmed']
 recovered = data['recovered']
 deaths = data['deaths']
 
-allVariables = (date,country,confirmed,recovered,deaths)
+allVariables = (dates,country,confirmed,recovered,deaths)
 cursor.execute(insertQuery, allVariables)
 dbConnection.commit()
 
