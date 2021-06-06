@@ -6,3 +6,10 @@ Self Challenge To Transfer Data Into Google Cloud SQL
 - Create Table using Python Script
 - Transfer Data From (CSV File) To Cloud SQL Database Table
 - Extract Data From The Cloud SQL and Analyze it using Jupyter Notebook
+- Creating Dashboard Using Google Data Studio
+## Tech Used in This Challenge:
+- Google Cloud SQL (MySQL)
+- Google Data Studio (Dashboard)
+- Python 3.8+ (Language)
+- Visual Studio Code (Editor)
+- Ubuntu 20.04+ (OS)
