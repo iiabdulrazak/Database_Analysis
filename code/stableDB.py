@@ -17,19 +17,10 @@ dbConnection = conn.connect(**config)
 #init the cursor
 cursor = dbConnection.cursor()
 #check if connection established!
-print(f'Connection ... \n{dbConnection}\n')
-
-createQuery = '''
-                CREATE TABLE IF NOT EXISTS corona(date DATE, country VARCHAR(255),
-                confirmed INT(50), recovered INT(50), deaths INT(50))
-              '''
-
-checkQuery = '''
-                SELECT * FROM corona
-             '''
+print(f'Connection ... \n{dbConnection}')
 
 #Inserting to the table
-csv_data = csv.reader(open('../data/data4.csv'))
+csv_data = csv.reader(open('../data/data2.csv'))
 header = next(csv_data)
 print('Inserting in Process ...!')
 for row in csv_data:
