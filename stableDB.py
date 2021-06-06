@@ -32,6 +32,7 @@ for row in csv_data:
     cursor.execute(
         "INSERT INTO corona (date,country,confirmed,recovered,deaths) VALUES (%s, %s, %s, %s, %s)", row)
 
+#Output the results
 conn.commit()
 cursor.close()
 print('Process Done!')
