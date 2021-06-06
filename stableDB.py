@@ -1,4 +1,5 @@
 try:
+    import csv
     import pandas as pd
     import mysql.connector as conn
 except Exception as e:
@@ -17,25 +18,22 @@ createQuery = '''
                 CREATE TABLE IF NOT EXISTS corona(date DATE, country VARCHAR(255),
                 confirmed INT(50), recovered INT(50), deaths INT(50))
               '''
+
 checkQuery = '''
                 SELECT * FROM corona
              '''
-insertQuery = '''
-                INSERT INTO corona(id,dates,country,confirmed,recovered,deaths) VALUES(%s,%s,%s,%s,%s,%s)
-             '''
-             
-#creating variable out of csv file
-data = pd.read_csv('data/data2.csv', header=None)
-ids = data.index
-dates = data['date']
-country = data['country']
-confirmed = data['confirmed']
-recovered = data['recovered']
-deaths = data['deaths']
 
-allVariables = (dates,country,confirmed,recovered,deaths)
-cursor.execute(insertQuery, allVariables)
-dbConnection.commit()
+#Inserting to the table
+csv_data = csv.reader(open('data/data2.csv'))
+header = next(csv_data)
+print('Inserting in Process ...!')
+for row in csv_data:
+    print(row)
+    cursor.execute(
+        "INSERT INTO corona (date,country,confirmed,recovered,deaths) VALUES (%s, %s, %s, %s, %s)", row)
 
-#lets print the output from the database
-print(checkQuery, dbConnection)
+conn.commit()
+cursor.close()
+print('Process Done!')
+outputQuery1 = pd.read_sql_query(checkQuery, dbConnection)
+print(outputQuery1)
