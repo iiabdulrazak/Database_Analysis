@@ -16,4 +16,3 @@ Self Challenge To Transfer Data Into Google Cloud SQL
 - Visual Studio Code (Editor)
    - python, pylance, Database Client
 - Ubuntu 20.04+ (OS)
-
